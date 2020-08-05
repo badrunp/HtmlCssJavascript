@@ -1,0 +1,364 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Lobster&display=swap');
+
+
+*{
+	margin: 0;
+	padding:0;
+	box-sizing: border-box;
+} 
+
+body{
+ font-family: 'Varta', sans-serif;
+} 
+
+
+
+.navbar{
+	position: relative;
+	max-width: 80px;
+	padding: 10px;
+} 
+.navbar	.box {
+	position:relative;
+	width: 100%;
+	height:40px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	z-index: 99;
+	transition: 0.5s all ease;
+}  
+
+.navbar .box.left{
+	transform: translatex(165px);
+} 
+
+.navbar .box input {
+	position: absolute;
+	width: 100%;
+	height:100%;
+	z-index:100;
+	opacity:0;
+} 
+.navbar .box span:nth-child(2) {
+	transform-origin: 0 0;
+} 
+.navbar .box input:checked ~ span:nth-child(2){
+	transform: rotate(45deg) translate(4px, -9px);
+} 
+
+.navbar .box input:checked ~ span:nth-child(3){
+	transform: translatex(100px);
+	opacity:0;
+} 
+
+
+.navbar .box span:nth-child(4) {
+	transform-origin: 0 100%;
+} 
+.navbar .box input:checked ~ span:nth-child(4){
+	transform: rotate(-45deg) translate(5px, 9px);
+} 
+
+
+
+
+.navbar .box span{
+	display: block;
+	width: 50px;
+	height: 5px;
+	background-color: white;
+	border-radius: 3px;
+	transition: 0.5s ease;
+} 
+
+.navbar .nav{
+	position: fixed;
+	top:0;
+	left:-100%;
+	width: 50%;
+	height: 100%;
+	background-color: rebeccapurple;
+	padding-top: 50px;
+	transition: 0.5s all ease;
+	overflow: hidden;
+} 
+
+.navbar .nav.active {
+	left:0;
+} 
+
+.navbar .nav ul {
+	position: relative;
+	top:0;
+	left:0;
+	width: 100%
+	text-align: center;
+} 
+
+.navbar .nav ul h1{
+	text-align: center;
+	color: white;
+	margin-top: -20px;
+	font-weight: bold;
+	font-size: 45px;
+	letter-spacing: 2px;
+	font-family: 'Lobster', cursive;
+	margin-bottom: 10px;
+} 
+.navbar .nav ul li {
+	width: 100%;
+	text-align: left;
+	padding-left: 10px;
+	font-size: 20px;
+	border-bottom: 2px solid blueviolet;
+	padding: 10px;
+	font-weight: 300;
+} 
+
+.navbar .nav img.putri{
+	position: absolute;
+	top:0;
+	left:0;
+	width: 100px;
+	height: 100px;
+	z-index: -1;
+} 
+
+.navbar .nav img.putri:nth-child(4){
+	top:70%;
+	left:-20%;
+	width: 300px;
+	height: 300px;
+} 
+
+.navbar .nav img.putri:nth-child(5){
+	top:10%;
+	left:-100%;
+	width: 500px;
+	height: 500px;
+	z-index: -1;
+} 
+
+.navbar .nav img.putri:nth-child(3){
+	top:-20%;
+	left:40%;
+	width: 300px;
+	height: 300px;
+	z-index: -1;
+} 
+
+
+
+/*font-family: 'Indie Flower', cursive;
+font-family: 'Lobster', cursive;
+*/
+.navbar .nav ul li a {
+	color: white;
+	text-decoration: none;
+	font-weight: 400;
+} 
+.navbar .nav p{
+	position: absolute;
+	left:0;
+	bottom:10px;
+	margin-left: 25px;
+	color: white;
+	font-family: 'Lobster', cursive;
+	font-size: 12px;
+} 
+section{
+	position: absolute;
+	width: 100%;
+	height:95vh;
+	background-color: blueviolet;
+	top:0;
+	z-index: -1;
+	left:0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+} 
+.container {
+	padding: 10px;
+	position: relative;
+	text-align: center;
+	width: 250px;
+	transition: 0.5s all;
+	left:0;
+} 
+.container.geser{
+	left: 50%;
+} 
+section .container .putriku{
+	width: 130px;
+	height: 130px;
+	object-fit: cover;
+	border-radius: 50%;
+	border: 2px solid white;
+	position: relative;
+} 
+
+
+
+section img.badrun{
+	position: absolute;
+	left:0;
+	top:0;
+	width: 100px;
+	height: 100px;
+} 
+
+
+section .badrun:nth-child(3){
+	left:0;
+	top:0;
+	width: 100px;
+	animation: animate2 60s linear infinite;
+	height: 100px;
+} 
+
+
+section .badrun:nth-child(2){
+	width: 150px;
+	height: 150px;
+	left: 63%;
+	animation: animate 60s linear infinite;
+	z-index:-1;
+} 
+
+
+section .badrun:nth-child(4){
+	width: 200px;
+	height: 200px;
+	left: 60%;
+	top: 25%;
+	z-index: -1;
+} 
+
+section .badrun:nth-child(5){
+	width: 150px;
+	height: 150px;
+	left: 0%;
+	top: 40%;
+	z-index: -1;
+	transform: rotatez(20deg);
+} 
+
+section .badrun:nth-child(6){
+	width: 120px;
+	height: 120px;
+	left: 20%;
+	top: 75%;
+} 
+
+section .badrun:nth-child(7){
+	width: 120px;
+	height: 120px;
+	left: 60%;
+	top: 75%;
+	z-index: -1;
+	
+} 
+
+section .badrun:nth-child(8){
+	width: 100px;
+	height: 100px;
+	left: -5%;
+	top: 50%;
+} 
+
+section .badrun:nth-child(9){
+	width: 50px;
+	height: 50px;
+	left: 40%;
+	top: 10%;
+} 
+
+section .badrun:nth-child(10){
+	width: 200px;
+	height: 200px;
+	left: 35%;
+	top: 35%;
+	z-index:-1;
+	animation: animate2 60s linear infinite;
+} 
+
+section .badrun:nth-child(11){
+	width: 100px;
+	height: 100px;
+	left: 0%;
+	top: 20%;
+	z-index: -1;
+	animation: animate 60s linear infinite;
+} 
+
+section .badrun:nth-child(12){
+	width: 120px;
+	height: 120px;
+	left: 0%;
+	top: 63%;
+	z-index: -1;
+	animation: animate 60s linear infinite;
+} 
+
+
+@keyframes animate {
+	0%{ transform: rotatez(0deg)}
+	100%{ transform: rotatez(360deg)}
+} 
+
+@keyframes animate2 {
+	0%{ transform: rotatez(0deg)}
+	100%{ transform: rotatez(-360deg)}
+} 
+
+.container h1 {
+	font-size: 25px;
+	letter-spacing: 1px;
+	color: white;
+	background-color: indigo;
+	width: 160px;
+	height: 40px;
+	line-height:45px;
+	text-align: center;
+	margin: 10px auto 20px;
+	border-radius: 25px;
+} 
+.container h2 {
+	font-size: 20px;
+	font-weight: 600;
+	color: white;
+	margin-bottom: 10px;
+	letter-spacing: 2px;
+}
+#text {
+	border-right: 1px solid white;
+	font-weight: bold;
+} 
+
+.container ul {
+	display: flex;
+	color: white;
+	list-style: none;
+	width: 100%;
+	justify-content: space-between;
+	font-size: 28px;
+} 
+
+.container h3{
+	background-color: red;
+	width: 100px;
+	margin: 10px auto;
+	font-weight: bold;
+	border-radius: 30px;
+	padding: 5px 5px;
+	letter-spacing: 1px;
+} 
+
+.container h3 a{
+	text-decoration: none;
+	color: white;
+} 

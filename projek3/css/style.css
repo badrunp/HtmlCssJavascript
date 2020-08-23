@@ -1,0 +1,839 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: arial;
+} 
+
+body {
+	background: silver;
+} 
+
+.up {
+	width: 50px;
+	height: 50px;
+	background-color: #333;
+	position: fixed;
+	bottom: 500px;
+	right: 15px;
+	z-index: 150;
+	border-radius: 50%;
+	visibility: hidden;
+	opacity: 0;
+	transition:0.5s;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	font-size: 20px;
+} 
+
+.up.active {
+	visibility: visible;
+	opacity: 1;
+	bottom: 15px;
+} 
+
+
+.navbar {
+	position: fixed;
+	top:0;
+	left:0;
+	width: 100%;
+	padding: 15px 0px;
+	background: #333;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	z-index:9;
+	
+} 
+.navbar .judul h1 {
+	position: relative;
+	color: white;
+	font-size: 40px;
+	z-index: 99;
+} 
+
+.navbar ul {
+	display: flex;
+	width: 30%;
+	justify-content: space-around;
+} 
+
+.navbar ul li {
+	list-style: none;
+} 
+
+.navbar ul li a {
+	text-decoration: none;
+	color: white;
+	font-size: 30px;
+	font-weight: 400;
+} 
+
+.navbar .tombol {
+	height: 28px;
+	display: none;
+	flex-direction: column;
+	justify-content: space-between;
+	z-index:99;
+} 
+
+.navbar .tombol span{
+	display: block;
+	width: 45px;
+	height: 3px;
+	background-color: white;
+	border-radius: 3px;
+	transition: 0.5s;
+} 
+.navbar .tombol input {
+	position: absolute;
+	width: 50px;
+	height: 40px;
+	opacity: 0;
+	z-index: 99;
+} 
+
+.navbar .tombol span:nth-child(2) {
+	transform-origin: 0 0;
+} 
+
+.navbar .tombol input:checked ~ span:nth-child(2) {
+	transform: rotate(45deg) translate(-2px,-2px)
+} 
+
+.navbar .tombol span:nth-child(4) {
+	transform-origin: 0 100%;
+} 
+
+.navbar .tombol input:checked ~ span:nth-child(4) {
+	transform: rotate(-45deg) translate(-2px,1px);
+} 
+
+.navbar .tombol input:checked ~ span:nth-child(3) {
+	transform: translate(-100%);
+	opacity: 0;
+} 
+
+
+
+
+
+.container {
+	position: relative;
+	top: 100px;
+	width: 90%;
+	margin: 20px auto;
+	overflow: hidden;
+} 
+
+.header {
+	position: relative;
+	width: 100%;
+	padding: 20px;
+	display: flex;
+	background-color: white;
+} 
+
+.header img{
+	position: relative;
+	width: 35%;
+	height: 350px;
+	text-align: center;
+} 
+
+.header .info {
+	position: relative;
+	width: 65%;
+	margin-left: 20px;
+} 
+.header .info h2 {
+	position: relative;
+	font-size: 3em;
+	font-weight: 900;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+} 
+.header .info .desk p{
+	font-family: 'Courgette', cursive;
+} 
+.header .info span.wdb{
+	position: relative;
+	font-family: 'Cardo', serif;
+	display: block;
+	font-weight: 600;
+	letter-spacing: 1px;
+	margin-top: -8px;
+} 
+.header .info p {
+	position: relative;
+	font-size: 14px;
+	font-weight: 400;
+	margin: 15px 0;
+	line-height: 25px;
+} 
+.header .info .bio{
+	position: relative;
+	display: flex;
+} 
+.header .info .bio ul{
+	width:100%;
+} 
+.header .info .bio ul li{
+	list-style: none;
+	font-size: 15px;
+	line-height: 26px;
+	text-transform:uppercase;
+	font-weight: 500;
+	font-family: 'Cardo', serif;
+} 
+
+.header .info .socialme p{
+	position: relative;
+	font-size: 1.1em;
+	letter-spacing: 1px;
+	font-weight: 900;
+	text-transform: uppercase;
+} 
+.header .info .socialme ul{
+	display: flex;
+	justify-content: space-between;
+} 
+
+.header .info .socialme ul li {
+	list-style: none;
+	font-size: 30px;
+} 
+
+
+.myskill {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	margin-top: 60px;
+} 
+
+.myskill .kotak-1 {
+	position: relative;
+	width: 40%;
+	background-color: white;
+	height: 300px;
+	padding: 20px;
+} 
+
+.myskill .kotak-1 .judul{
+	position: absolute;
+	left: 50%;
+	top: -2%;
+	width: 210px;
+	padding: 18px 0px;
+	background-color: dodgerblue;
+	transform: translate(-50%,-50%);
+	text-align: center;
+} 
+.myskill .kotak-1 .judul p {
+	position: relative;
+	font-size: 16px;
+	font-weight: 600;
+	color: white;
+	text-transform: uppercase;
+} 
+.myskill .kotak-1 .skill {
+	position: relative;
+	width: 100%;
+	height: 20px;
+	background-color: silver;
+	top: 40px;
+	margin-bottom: 40px;
+	border-radius: 3px;
+} 
+
+.myskill .kotak-1 .skill:before{
+	content: '';
+	position: absolute;
+	left:0;
+	top: 0;
+	width: 87%;
+	height: 100%;
+	background-color: dodgerblue;
+	border-radius: 3px;
+} 
+
+.myskill .kotak-1 .skill.css:before{
+	width: 89%;
+} 
+
+.myskill .kotak-1 .skill.javascript:before{
+	width: 72%;
+} 
+
+.myskill .kotak-1 .skill.php:before{
+	width: 48%;
+} 
+
+
+
+
+
+.myskill .kotak-1 .skill span:nth-child(1){
+	display: block;
+	position: absolute;
+	top: -25px;
+	font-size: 18px;
+	font-weight: 400;
+	text-transform: uppercase;
+} 
+
+.myskill .kotak-1 .skill span:nth-child(2){
+	display: block;
+	position: absolute;
+	top: -25px;
+	right: 0;
+	font-size: 18px;
+	font-weight: 400;
+	text-transform: uppercase;
+} 
+
+
+
+.container .myskill .kotak-2 {
+	position: relative;
+	width: 56%;
+	background-color: white;
+	height: 300px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	justify-content: space-around;
+} 
+
+.myskill .kotak-2 .judul{
+	position: absolute;
+	left: 50%;
+	top: -2%;
+	width: 210px;
+	padding: 18px 0px;
+	background-color: dodgerblue;
+	transform: translate(-50%,-50%);
+	text-align: center;
+} 
+.myskill .kotak-2 .judul p {
+	position: relative;
+	font-size: 16px;
+	font-weight: 600;
+	color: white;
+	text-transform: uppercase;
+} 
+
+.myskill .kotak-2 .svg {
+	position: relative;
+	width: 145px;
+	width: 145px;
+} 
+
+.myskill .kotak-2 .svg span{
+	position: absolute;
+	display: block;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -80%);
+	font-size: 37px;
+	font-weight: 600;
+} 
+
+.myskill .kotak-2 .svg p {
+	font-size: 20px;
+	font-weight: 500;
+	letter-spacing: 1px;
+	position: relative;
+	text-align: center;
+	text-transform: uppercase;
+	margin-top: 10px;
+} 
+
+.myskill .kotak-2 .svg svg{
+	position: relative;
+	width: 145px;
+	width: 145px;
+} 
+
+.myskill .kotak-2 .svg circle{
+	width: 145px;
+	width: 145px;
+	fill: none;
+	stroke: black;
+	stroke-width: 10px;
+	transform: translate(3px,7px);
+	stroke-dasharray: 440;
+	stroke-dashoffset: 440;
+} 
+
+.myskill .kotak-2 .svg circle:nth-child(1){
+	stroke: silver;
+	stroke-dashoffset: 0;
+} 
+
+.myskill .kotak-2 .svg circle:nth-child(2){
+	stroke: dodgerblue;
+	stroke-dashoffset: 50;
+} 
+
+.tentang {
+	position: relative;
+	width: 100%;
+	height:350px;
+	margin-top: 40px;
+	display: flex;
+} 
+
+.tentang .hoby {
+	position: relative;
+	width: 50%;
+	height: 100%;
+	background-color: white;
+	padding: 20px;
+} 
+
+.tentang .hoby .judul{
+	position: relative;
+	background-color: dodgerblue;
+	padding: 10px;
+	width: 200px;
+	margin: auto;
+	transform: skewx(-15deg);
+} 
+
+.tentang .hoby .judul h1 {
+	position: relative;
+	color: white;
+	transform: skewx(15deg);
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 20px;
+	letter-spacing: 2px;
+} 
+
+.tentang .hoby .kotak {
+	position: relative;
+	width: 100%;
+	height: 230px;
+	display: flex;
+	margin-top: 20px;
+	flex-wrap: wrap;
+	justify-content: space-between;
+} 
+
+.tentang .hoby .kotak .satu {
+	position: relative;
+	width: 30%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+} 
+
+.tentang .hoby .kotak .satu i{
+	position: relative;
+	font-size: 40px;
+	color: #333;
+} 
+.tentang .hoby .kotak .satu span {
+	position: relative;
+	display: block;
+	margin-top: 5px;
+	font-size: 15px;
+	font-weight: 500;
+	text-transform: uppercase;
+} 
+
+
+.tentang .pendidikan {
+	position: relative;
+	width: 50%;
+	height: 100%;
+	background-color: white;
+	padding: 20px;
+} 
+
+.tentang .pendidikan .judul{
+	position: relative;
+	background-color: dodgerblue;
+	padding: 10px;
+	width: 250px;
+	margin: auto;
+	transform: skewx(-15deg);
+} 
+
+.tentang .pendidikan .judul h1 {
+	position: relative;
+	color: white;
+	transform: skewx(15deg);
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 20px;
+	letter-spacing: 2px;
+} 
+
+.tentang .pendidikan .kotak {
+	position: relative;
+	width: 100%;
+	height: 250px;
+	margin-top: 20px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+} 
+
+.tentang .pendidikan .kotak .satu {
+	position: relative;
+	width: 100%;
+	height: 50px;
+} 
+
+.tentang .pendidikan .kotak .satu h3{
+	color: white;
+	transform: skew(25deg);
+} 
+
+.tentang .pendidikan .kotak .satu .gigir {
+	background-color: dodgerblue;
+	width: 150px;
+	padding: 5px;
+	transform: skew(-25deg);
+	text-align: center;
+	margin-left: 10px;
+} 
+
+
+.tentang .pendidikan .kotak .satu p{
+	position: relative;
+	display: block;
+	border-top: 2px solid;
+	font-size: 18px;
+	font-family: 'Courgette', cursive;
+	padding-left: 10%;
+	letter-spacing: 2px;
+	padding-top: 3px;
+} 
+
+.karya {
+	width: 90%;
+	position: relative;
+	background-color: white;
+	padding: 20px;
+	margin: 60px auto 0;
+} 
+.karya .gambar {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	height: 580px;
+	margin-top: 20px;
+} 
+
+.karya .gambar img {
+	width: 30%;
+	height: 270px;
+} 
+.karya p {
+	margin-top: 40px;
+	font-size: 30px;
+	font-weight: 600;
+	letter-spacing: 2px;
+} 
+.karya span {
+	position: absolute;
+	display: block;
+	top: -20px;
+	left: 0;
+	padding: 5px 15px;
+	background-color: dodgerblue;
+	color: white;
+	text-transform: uppercase;
+	font-weight: 600;
+	font-size: 30px;
+} 
+
+.karya span:nth-child(1){
+	left: 50px;
+} 
+.karya span:nth-child(2){
+	left: 120px;
+} 
+.karya span:nth-child(3){
+	left: 190px;
+} 
+.karya span:nth-child(4){
+	left: 260px;
+} 
+.karya span:nth-child(5){
+	left: 330px;
+} 
+
+
+footer {
+	position: relative;
+	width: 100%;
+	height: 100px;
+	background-color: #333;
+	margin-top: 150px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+} 
+footer p {
+	color: white;
+	font-size: 20px;
+	font-weight: 600;
+} 
+@media screen and (max-width: 450px) {
+	.container {
+		top: 60px;
+	} 
+	.header {
+		flex-direction: column;
+	} 
+	.header .info {
+		margin-left: 0;
+		width: 100%;
+	} 
+	.header img {
+		width: 130px;
+		height: 150px;
+		border-radius: 50%;
+		margin: auto;
+	} 
+	.header .info .desk p {
+		font-size: 11px;
+		line-height: 15px;
+	} 
+	.header .info h2{
+		text-align: center;
+		font-size: 20px;
+		width:100%;
+		margin-top: 10px;
+	} 
+	.header .info span.wdb{
+		text-align: center;
+		margin-top: 2px;
+		font-size: 11px;
+	} 
+	.header .info .bio ul li{
+		font-size: 12px;
+		font-weight: 400;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		line-height: 18px;
+	} 
+	.header .info .bio {
+		flex-direction: column;
+	} 
+	.header .info .socialme p{
+		font-size: 0.8em;
+	} 
+	
+	.navbar .judul h1 {
+		font-size: 25px;
+	} 
+	
+	.navbar ul {
+		position: absolute;
+		background-color: #333;
+		top: 0;
+		left:0;
+		width: 100%;
+		height: 100vh;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-around;
+		z-index: -5;
+		transition: 0.5s;
+		transform: translatey(-100%);
+		opacity:0;
+	}
+	.navbar ul.active {
+		transform: translatey(0);
+		opacity: 1;
+	} 
+	.navbar ul li a {
+		font-size: 0px;
+	} 
+	.navbar ul.active li a{
+		font-size: 40px;
+		transition-delay: 0.5s;
+	} 
+	.navbar .tombol {
+		display: flex;
+	} 
+	.myskill {
+		flex-direction: column;
+		margin-top: 30px;
+	} 
+	.myskill .kotak-1 {
+		width: 100%;
+		margin: 40px 0;
+	} 
+	
+	.myskill .kotak-1 .skill{
+		height: 15px;
+		border-radius: 3px;
+	} 
+	.myskill .kotak-1 .skill:before {
+		border-radius: 3px;
+	} 
+	.myskill .kotak-1 .skill span:nth-child(1){
+		font-size: 15px;
+		top: -20px;
+	} 
+	.myskill .kotak-1 .skill span:nth-child(2){
+		font-size: 15px;
+		top: -20px;
+	} 
+	.myskill .kotak-1 {
+		height: 280px;
+	} 
+	
+	.container .myskill .kotak-2 {
+		width: 100%;
+		flex-direction: column;
+		height: auto;
+		padding: 30px 0;
+		margin-top: 20px;
+	} 
+	
+	.myskill .kotak-2 .judul {
+		top: 0;
+	} 
+	
+	.myskill .kotak-2 .svg{
+		margin: 20px 0;
+	} 
+	.tentang {
+		flex-direction: column;
+		height: 750px;
+	} 
+	.tentang .hoby {
+		width: 100%;
+	} 
+	.tentang .hoby .kotak .satu i{
+		font-size: 30px;
+	} 
+	.tentang .hoby .kotak .satu span{
+		font-size: 12px;
+	} 
+	.tentang .pendidikan {
+		width: 100%;
+		margin-top: 40px;
+	} 
+	.tentang .pendidikan .kotak .satu h3{
+		font-size: 15px;
+	} 
+	
+	.tentang .pendidikan .kotak .satu .gigir {
+		width: 120px;
+		margin-left: 7px;
+	} 
+	.tentang .pendidikan .kotak .satu p{
+		border-top: 1.5px solid;
+		font-size: 15px;
+		padding-top: 5px;
+		letter-spacing: 1px;
+	} 
+	.karya {	
+		width: 100%;
+	} 
+	.karya .gambar {
+		height: auto;
+		justify-content: space-around;
+	} 
+	.karya .gambar img {
+		width: 100%;
+		height: 300px;
+		margin-top: 20px;
+	} 
+	.karya span {
+		padding: 2px 7px;
+		font-weight: 600;
+		font-size: 25px;
+	} 
+	.karya span:nth-child(1){
+		left: 30px;
+	} 
+	.karya span:nth-child(2){
+		left: 70px;
+	} 
+	.karya span:nth-child(3){
+		left: 110px;
+	} 
+	.karya span:nth-child(4){
+		left: 150px;
+	} 
+	.karya span:nth-child(5){
+		left: 190px;
+	} 
+	.karya p {
+		margin-top: 10px;
+		font-size: 20px;
+		font-weight: 600;
+		letter-spacing: 1px;
+	} 
+	footer {
+		margin-top: 120px;
+	} 
+	footer p {
+		font-size: 15px;
+	} 
+} 
+
+
+/*
+<div class="judul"></div>
+				
+				<div class="musik">
+					<i class="fas fa-music"></i>
+					<span>musik</span>
+				</div>
+				
+				<div class="menggambar">
+					<i class="fas fa-pencil-ruler"></i>
+					<span>menggambar</span>
+				</div>
+				
+				<div class="membaca">
+					<i class="fas fa-book-open"></i>
+					<span>membaca</span>
+				</div>
+				
+				<div class="olahraga">
+					<i class="fas fa-running"></i>
+					<span>olahraga</span>
+				</div>
+				
+				<div class="travel">
+					<i class="fas fa-plane"></i>
+					<span>travel</span>
+				</div>
+				
+				<div class="film">
+					<i class="fas fa-film"></i>
+					<span>nonton film</span>
+				</div>
+				
+				
+				.tentang {
+				flex-direction: column;
+				} 
+				.tentang .hoby {
+				width: 100%;
+				} 
+				.tentang .hoby .kotak .satu i{
+				font-size: 30px;
+				} 
+				.tentang .hoby .kotak .satu span{
+				font-size: 12px;
+				} 
+				
+
+*/
